@@ -36,9 +36,6 @@ public class ShaassOskols {
             }
             boxes[position - 1] = 0;
         }
-        for (int box: boxes){
-            System.out.println(box);
-        }
 
     }
 }
