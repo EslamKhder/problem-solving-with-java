@@ -10,7 +10,7 @@ public class PanScales {
         String pointerLeft = "";
         String pointerRight = "";
         Boolean flag = true;
-        for (int i = 0; i < scale.toCharArray().length; i++) { // W b n | T    0 1 2 3 4
+        for (int i = 0; i < scale.toCharArray().length; i++) { // W b n | T
             if (flag) {
                 if (scale.toCharArray()[i] == '|') {
                     flag = false;
