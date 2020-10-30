@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class BearBigBrother {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
         int value1 = scanner.nextInt(); // 4
         int value2 = scanner.nextInt(); // 7
