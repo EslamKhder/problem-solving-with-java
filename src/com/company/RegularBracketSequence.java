@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
 import java.util.Scanner;
 
 public class RegularBracketSequence {
