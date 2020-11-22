@@ -7,17 +7,17 @@ public class NextTest {
         Scanner scanner = new Scanner(System.in);
         int numSolved = scanner.nextInt();
         int []nums = new int[numSolved];
-        int result = 0;
         int start = 1;
-        for (int i =0;i<numSolved;i++){
+        int result = 0;
+        for (int i=0;i<numSolved;i++){
             nums[i] = scanner.nextInt();
         }
         sortArray(nums);
+        // 1   7    9
         for (int i =0;i<numSolved;i++){
-                if(!(nums[i] == start)){
-                    result = nums[i];
-                    break;
-                }
+            if(!(nums[i] == start)){
+                break;
+            }
             start++;
         }
         System.out.println(start);
@@ -32,6 +32,10 @@ public class NextTest {
                     intArray[i] = intArray[j];
                     intArray[j] = temp;
                 }
+                for (int y =0;y<intArray.length;y++){
+                    System.out.print(intArray[y]);
+                }
+                System.out.println();
             }
         }
     }
