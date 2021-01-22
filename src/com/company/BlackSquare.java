@@ -1,21 +1,26 @@
 package com.company;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class BlackSquare {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int [] nums = new int[4];
-        int counter = 0;
-        for (int i=0;i<nums.length;i++){
-            nums[i] = scanner.nextInt();
+        Map<Integer,Integer> steps = new HashMap<>();
+        int res = 0;
+        for (int i=1;i<=4;i++){
+            steps.put(i,scanner.nextInt());
         }
-        String instraction = scanner.next();
-        for (int x = 0;x<instraction.toCharArray().length;x++){
-            //counter += nums[Math.abs(instraction.toCharArray()[x] - 48 - 1)];
-            //System.out.println("-----> " + (int)instraction.charAt(x));
-            counter += nums[Math.abs( (int)instraction.charAt(x) - 48 - 1)];
+        /*
+            1 2 3 4
+            1 5 3 2
+        * */
+        // 11221
+        char []arr = scanner.next().toCharArray(); // ['1','1','2','2','1']
+        for (int i=0;i<arr.length;i++){
+            res += steps.get(arr[i] - 48);
         }
-        System.out.println(counter);
+        System.out.println(res);
     }
 }

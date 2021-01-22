@@ -8,7 +8,6 @@ public class BurglarMatches {
         int numBags = scanner.nextInt();
         int numBox = scanner.nextInt();
         Map<Integer,Integer> boxs = new HashMap<>();
-
         for (int i =0;i<numBox;i++){
             int nums = scanner.nextInt();
             int total = scanner.nextInt();
@@ -18,18 +17,23 @@ public class BurglarMatches {
                 boxs.put(total,nums);
             }
         }
-        List<Integer> keysMap = new ArrayList<>(boxs.keySet());
+        List<Integer> keys = new ArrayList<>(boxs.keySet());
         int result = 0;
-        for (int i =boxs.size() -1;i>=0;i--){
-            if(boxs.get(keysMap.get(i)) < numBags){
-                result += (keysMap.get(i) * boxs.get(keysMap.get(i)));
+        for(int i = keys.size() - 1;i>=0;i--){
+            if(boxs.get(keys.get(i)) < numBags){
+                result += (keys.get(i) * boxs.get(keys.get(i)));
             } else {
-                result += (keysMap.get(i)* numBags);
+                result += (keys.get(i) * numBags);
                 break;
             }
-            numBags -= boxs.get(keysMap.get(i));
-
+            numBags -= boxs.get(keys.get(i));
         }
         System.out.println(result);
+
     }
 }
+/*
+* for (Map.Entry<Integer, Integer> entry : boxs.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+* */

@@ -4,31 +4,24 @@ import java.util.Scanner;
 public class GoodNumber {
 
     public static void main(String[] args) {
-        /*
-        10 6
-        1234560 1234560 1234560 1234560
-        1234560 1234560 1234560 1234560
-        1234560 1234560
-        * */
         Scanner scanner = new Scanner(System.in);
         int size = scanner.nextInt();
-        int range = scanner.nextInt();
-        int result = 0;
-        int counter = 0;
-        for (int i = 0; i < size; i++) { // size = 10
-            String num = scanner.next(); // num =  1234560
-            for (int x = 0; x < num.length(); x++) { // num.length =  7
-                counter = 0;
-                for (int z = 0; z <= range; z++) { /// range =  0123456
-                    if ((num.contains(String.valueOf(z)))) {
-                        counter++;
-                    }
+        int range = scanner.nextInt(); // 6
+        String myNums = "0123456789";
+        int con1 = 0;
+        int con2 = 0;
+        for (int i =0;i<size;i++) {
+            String value = scanner.next();  // 0123456
+            for (int x =0;x<range + 1;x++) {
+                if (value.contains(myNums.substring(x, x + 1))) {
+                    con1++; // 7
                 }
             }
-            if (counter == range + 1) {
-                result++;
+            if (con1 >= range + 1) {
+                con2++;
             }
+            con1 = 0;
         }
-        System.out.println(result);
+        System.out.println(con2);
     }
 }
